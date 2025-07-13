@@ -52,7 +52,7 @@ window#waybar {
 #custom-power,
 #custom-menu,
 #idle_inhibitor {
-    padding: 0 10px;
+    padding: 10px 10px;
 }
 #mode {
     color: #cc3436;
@@ -139,6 +139,15 @@ window#waybar {
 	background-color: rgba(0,119,179,0.3);
 }
 
+#custom-new-workspace
+{
+    padding: 10px 20px;
+}
+
+#custom-new-workspace:hover
+{
+	background-color: rgba(0,119,179,0.3);
+}
 /*-----Colors----*/
 /*
  *rgba(0,85,102,1),#005566 --> Indigo(dye)
