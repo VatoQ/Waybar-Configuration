@@ -1,24 +1,32 @@
 {
-    "modules-left": ["hyprland/workspaces", "hyprland/mode"],
+    "modules-left": ["hyprland/workspaces", "custom/new-workspace"],
     "modules-center": ["clock", "idle_inhibitor", "pulseaudio"],
     "modules-right": ["custom/scratchpad-indicator", "network", "bluetooth", "custom/power"],
 
     "hyprland/workspaces" : {
-        "format": "{name}: {icon}",
+        "format": "{icon}",
         "format-icons": {
 		        "active": "",
 		        "default": ""
-          }
+          },
+        "tooltip-format": "Workspace {name}"
       },
 
-    "hyprland/mode": {
+    "custom/new-workspace" : {
+        "format": "",
+        "tooltip-format": "Create a new workspace",
+        "on-click": "~/.config/waybar/new_workspace_script.py",
+    },
+
+    "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
     "network": {
-        "format-wifi": "{signalStrength}% ",
+        "format-wifi": "",
         "format-ethernet": "{ifname} ",
         "format-disconnected": "", 
         "max-length": 50,
+        "tooltip-format": "{signalStrength}%",
         "on-click": "~/.config/waybar/network_script.sh"
     },
     "idle_inhibitor": {
@@ -33,14 +41,14 @@
         "spacing": 10
     },
     "clock": {
-        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        // "format-alt": "{:%Y-%m-%d}"
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d:%m:%Y}", //"{:%Y-%m-%d}"
 		"on-click": "~/.config/waybar/calendar_script.sh"
     },
     "pulseaudio": {
-        "format": "{volume}% {icon} ",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format": "{icon}",
+        "format-bluetooth": "{icon} ",
+        "format-bluetooth-muted": "{icon} 󰂲",
         "format-muted": "0% {icon} ",
         "format-source": "{volume}% ",
         "format-source-muted": "",
@@ -57,7 +65,8 @@
     },
 	"custom/power": {
 		"format": "",
-		"on-click": "wlogout"
+		"on-click": "wlogout",
+    "tooltip-format": "Logout..."
 	},
     "custom/scratchpad-indicator": {
         "format-text": "{}hi",
@@ -76,7 +85,7 @@
         "format-off": "󰂲",
         "format-disabled": "", // an empty format will hide the module
         "format-connected": "󰂱 {num_connections}",
-        // "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
         // "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
