@@ -1,5 +1,5 @@
 {
-    "modules-left": ["hyprland/workspaces", "hyprland/mode"],
+    "modules-left": ["hyprland/workspaces", "custom/new-workspace"],
     "modules-center": ["clock", "idle_inhibitor", "pulseaudio"],
     "modules-right": ["custom/scratchpad-indicator", "network", "bluetooth", "custom/power"],
 
@@ -11,7 +11,12 @@
           }
       },
 
-    "hyprland/mode": {
+    "custom/new-workspace" : {
+        "format": "⊕",
+        "on-click": "~/.config/waybar/new_workspace_script.py",
+    },
+
+    "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
     "network": {
