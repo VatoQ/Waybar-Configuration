@@ -1,7 +1,7 @@
 * {
     border: none;
-    font-family: Font Awesome, Roboto, Arial, sans-serif;
-    font-size: 22px;
+    font-family: "Adwaita Sans Regular", Roboto, Arial, sans-serif;
+    font-size: 25px;
     color: #ffffff;
     border-radius: 20px;
 }
@@ -27,7 +27,7 @@ window#waybar {
 }
 /*-----modules indv----*/
 #workspaces button {
-    padding: 10px 15px;
+    padding: 10px 25px;
     background-color: transparent;
 }
 #workspaces button:hover {
@@ -44,7 +44,6 @@ window#waybar {
 #cpu,
 #memory,
 #temperature,
-#network,
 #pulseaudio,
 #custom-media,
 #tray,
@@ -69,6 +68,8 @@ window#waybar {
 {
     background-color: rgba(215, 143, 0,0.5);
 }
+
+
 /*-----Indicators----*/
 #idle_inhibitor.activated {
     color: #2dcc36;
@@ -89,65 +90,33 @@ window#waybar {
     color: #cc3436;
 }
 
-#bluetooth
-{
-  padding: 10px 20px;
-}
 
-#bluetooth:hover
-{
-	background-color: rgba(0,119,179,0.3);
-}
-
-#clock
-{
-  padding: 10px 20px;
-}
-
-#clock:hover
-{
-	background-color: rgba(0,119,179,0.3);
-}
-
-#idle_inhibitor
-{
-  padding: 10px 20px;
-}
-
-#idle_inhibitor:hover
-{
-	background-color: rgba(0,119,179,0.3);
-}
-
-#pulseaudio
-{
-  padding: 10px 20px;
-}
-
-#pulseaudio:hover
-{
-	background-color: rgba(0,119,179,0.3);
-}
-
-#network
-{
-  padding: 10px 20px;
-}
-
-#network:hover
-{
-	background-color: rgba(0,119,179,0.3);
-}
-
+#bluetooth,
+#clock,
+#idle_inhibitor,
+#pulseaudio,
+#network,
 #custom-new-workspace
 {
-    padding: 10px 20px;
+    padding: 10px 25px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgba(0, 119, 179, 0);
 }
 
+
+#bluetooth:hover,
+#clock:hover,
+#idle_inhibitor:hover,
+#pulseaudio:hover,
+#network:hover,
 #custom-new-workspace:hover
 {
-	background-color: rgba(0,119,179,0.3);
+    background-color: rgba(0, 119, 179, 0.3);
+    border-color: rgba(0, 119, 179, 0.9);
 }
+
+
 /*-----Colors----*/
 /*
  *rgba(0,85,102,1),#005566 --> Indigo(dye)
