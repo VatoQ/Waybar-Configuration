@@ -1,6 +1,6 @@
 * {
     border: none;
-    font-family: "Adwaita Sans Regular", Roboto, Arial, sans-serif;
+    font-family: "Adwaita Sans", Roboto, Arial, sans-serif;
     font-size: 25px;
     color: #ffffff;
     border-radius: 20px;
@@ -12,17 +12,13 @@ window {
 window#waybar {
     background: rgba(0, 0, 0, 0);
 }
-/*-----module groups----*/
-.modules-right {
-	background-color: rgba(0,119,179,0.3);
-    margin: 2px 10px 0 0;
-}
-.modules-center {
-	background-color: rgba(0,119,179,0.3);
-    margin: 2px 0 0 0;
-}
+/*-----module groups----*/ 
+
+
+.modules-right,
+.modules-center,
 .modules-left {
-    margin: 2px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
 	background-color: rgba(0,119,179,0.3);
 }
 /*-----modules indv----*/
@@ -39,20 +35,8 @@ window#waybar {
 	background-color: rgba(0,43,51,0.85);
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#temperature,
-#pulseaudio,
-#custom-media,
-#tray,
-#mode,
-#custom-power,
-#custom-menu,
-#idle_inhibitor {
-    padding: 10px 10px;
-}
+
+
 #mode {
     color: #cc3436;
     font-weight: bold;
