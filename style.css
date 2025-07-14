@@ -41,18 +41,37 @@ window#waybar {
     color: #cc3436;
     font-weight: bold;
 }
+
+/* styling for round svg buttons */ 
+#custom-power,
+#bluetooth
+{
+    font-size: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 5px;
+}
+
+
 #custom-power {
-    background-color: rgba(0,119,179,0.3);
-    border-radius: 100px;
-    margin: 5px 5px;
-    padding: 10px 15px;
+    background-image: url('/home/onath/.config/waybar/icons/logout-inactive.svg');
+    /*margin-right: 5px;*/
 }
 
 #custom-power:hover
 {
-    background-color: rgba(215, 143, 0,0.5);
+    background-image: url('/home/onath/.config/waybar/icons/logout-hover.svg');
+}
+#bluetooth
+{
+    background-image: url('/home/onath/.config/waybar/icons/bluetooth-inactive.svg');
 }
 
+#bluetooth:hover
+{
+    background-image: url('/home/onath/.config/waybar/icons/bluetooth-hover.svg');
+}
 
 /*-----Indicators----*/
 #idle_inhibitor.activated {
@@ -75,7 +94,6 @@ window#waybar {
 }
 
 
-#bluetooth,
 #clock,
 #idle_inhibitor,
 #pulseaudio,
@@ -89,7 +107,6 @@ window#waybar {
 }
 
 
-#bluetooth:hover,
 #clock:hover,
 #idle_inhibitor:hover,
 #pulseaudio:hover,
