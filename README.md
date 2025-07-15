@@ -1,6 +1,6 @@
 # Waybar Configuration
 
-![Screenshot of waybar config](/img/Pasted image.png)
+![Screenshot of waybar config](/img/Pasted image.png?raw=true "Screenshot")
 
 ## Required Packages:
   - pavucontrol
