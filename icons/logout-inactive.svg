@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 132.29166 132.29167"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="logout-inactive.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     showguides="true"
+     inkscape:zoom="0.5325"
+     inkscape:cx="106.10329"
+     inkscape:cy="166.19718"
+     inkscape:window-width="1874"
+     inkscape:window-height="962"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     labelstyle="default">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="0.26458332"
+       spacingy="0.26458334"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+    <sodipodi:guide
+       position="26.458333,134.44202"
+       orientation="-1,0"
+       id="guide1"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="105.83333,119.98548"
+       orientation="-1,0"
+       id="guide2"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="49.831667,26.458333"
+       orientation="0,1"
+       id="guide3"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="40.522205,105.83333"
+       orientation="0,1"
+       id="guide4"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="66.14583,103.1875"
+       orientation="1,0"
+       id="guide5"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="18.520832,66.145833"
+       orientation="0,-1"
+       id="guide6"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="34.395832,89.958334"
+       orientation="1,0"
+       id="guide7"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="97.895828,74.083333"
+       orientation="1,0"
+       id="guide8"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="66.145828,97.895835"
+       orientation="0,-1"
+       id="guide9"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="39.687498,34.395831"
+       orientation="0,-1"
+       id="guide10"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Circle"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#0077b3;fill-opacity:0.40000001;stroke-width:0.264583"
+       id="path1"
+       cx="66.145836"
+       cy="66.145836"
+       r="66.145836" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <path
+       d="M 66.145832,26.458333 A 39.6875,39.6875 0 0 0 26.458333,66.145832 39.6875,39.6875 0 0 0 66.145832,105.83333 39.6875,39.6875 0 0 0 105.83333,66.145832 39.6875,39.6875 0 0 0 66.145832,26.458333 Z m -5.291666,8.3814 v 31.306099 c 0,2.931584 2.360083,5.291667 5.291666,5.291667 2.931584,0 5.291667,-2.360083 5.291667,-5.291667 V 34.839733 a 31.75,31.750002 0 0 1 26.458333,31.306099 31.75,31.750002 0 0 1 -31.75,31.75 31.75,31.750002 0 0 1 -31.749999,-31.75 31.75,31.750002 0 0 1 26.458333,-31.306099 z"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:0.767292;stroke-opacity:0;paint-order:markers fill stroke"
+       id="path23" />
+  </g>
+</svg>

@@ -6,14 +6,17 @@
     "hyprland/workspaces" : {
         "format": "{icon}",
         "format-icons": {
-		        "active": "",
-		        "default": ""
+		        //"active": "",
+		        //"default": ""
+            "active": "    ",
+            "default": "    ",
           },
         "tooltip-format": "Workspace {name}"
       },
 
     "custom/new-workspace" : {
-        "format": "",
+        //"format": "",
+        "format": "    ",
         "tooltip-format": "Create a new workspace",
         "on-click": "~/.config/waybar/new_workspace_script.py",
     },
@@ -22,7 +25,8 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "network": {
-        "format-wifi": "",
+        //"format-wifi": "",
+        "format-wifi": "    ",
         "format-ethernet": "{ifname} ",
         "format-disconnected": "", 
         "max-length": 50,
@@ -64,7 +68,8 @@
         "on-click": "~/.config/waybar/audio_script.sh"
     },
 	"custom/power": {
-		"format": "",
+		//"format": "",
+    "format": "    ",
 		"on-click": "wlogout",
     "tooltip-format": "Logout..."
 	},
@@ -81,7 +86,8 @@
         // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
         // "format": "󰂯 {status}",
         // format-* handles every state, so default format is not necessary.
-        "format-on": "󰂯",
+        // "format-on": "󰂯",
+        "format-on": "    ",
         "format-off": "󰂲",
         "format-disabled": "", // an empty format will hide the module
         "format-connected": "󰂱 {num_connections}",
