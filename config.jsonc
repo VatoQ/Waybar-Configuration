@@ -6,14 +6,17 @@
     "hyprland/workspaces" : {
         "format": "{icon}",
         "format-icons": {
-		        "active": "",
-		        "default": ""
+		        //"active": "",
+		        //"default": ""
+            "active": "    ",
+            "default": "    ",
           },
         "tooltip-format": "Workspace {name}"
       },
 
     "custom/new-workspace" : {
-        "format": "",
+        //"format": "",
+        "format": "    ",
         "tooltip-format": "Create a new workspace",
         "on-click": "~/.config/waybar/new_workspace_script.py",
     },
@@ -22,7 +25,8 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "network": {
-        "format-wifi": "",
+        //"format-wifi": "",
+        "format-wifi": "    ",
         "format-ethernet": "{ifname} ",
         "format-disconnected": "", 
         "max-length": 50,
