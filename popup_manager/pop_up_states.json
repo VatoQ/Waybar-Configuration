@@ -1,0 +1,27 @@
+{
+    "wlogout": {
+        "active": false,
+        "focused": true,
+        "timer": 0
+    },
+    "blueman-manager": {
+        "active": true,
+        "focused": true,
+        "timer": 0
+    },
+    "network": {
+        "active": false,
+        "focused": true,
+        "timer": 0
+    },
+    "pavucontrol": {
+        "active": false,
+        "focused": true,
+        "timer": 0
+    },
+    "calendar": {
+        "active": false,
+        "focused": true,
+        "timer": 0
+    }
+}

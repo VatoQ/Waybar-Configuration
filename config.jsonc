@@ -50,20 +50,25 @@
 		"on-click": "~/.config/waybar/calendar_script.sh"
     },
     "pulseaudio": {
-        "format": "{icon}",
-        "format-bluetooth": "{icon} ",
-        "format-bluetooth-muted": "{icon} 󰂲",
-        "format-muted": "0% {icon} ",
+        //"format": "{icon}",
+        "format": "    ",
+        //"format-bluetooth": "{icon} ",
+        "format-bluetooth": "    ",
+        //"format-bluetooth-muted": "{icon} 󰂲",
+        "format-bluetooth-muted": "    ",
+        //"format-muted": "0% {icon} ",
+        "format-muted": "    ",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            //"headphone": "",
+            //"hands-free": "",
+            //"headset": "",
+            //"phone": "",
+            //"portable": "",
+            //"car": "",
+            //"default": ["", "", ""]
+            //"default": ["", "", ""]
         },
         "on-click": "~/.config/waybar/audio_script.sh"
     },
@@ -87,12 +92,13 @@
         // "format": "󰂯 {status}",
         // format-* handles every state, so default format is not necessary.
         // "format-on": "󰂯",
-        "format-on": "    ",
-        "format-off": "󰂲",
-        "format-disabled": "", // an empty format will hide the module
-        "format-connected": "󰂱 {num_connections}",
-        "tooltip-format": "{controller_alias}\t{controller_address}",
-        // "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        //"format-on": "    ",
+        //"format-off": "󰂲",
+        //"format-disabled": "", // an empty format will hide the module
+        //"format-connected": "󰂱 {num_connections}",
+        //"tooltip-format": "{controller_alias}\t{controller_address}",
+        "format": "    ",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "on-click": "~/.config/waybar/bluetooth_script.sh" // "blueman-manager",

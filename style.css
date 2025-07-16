@@ -34,7 +34,8 @@ window#waybar {
 #custom-new-workspace,
 #workspaces button,
 #network,
-#bluetooth
+#bluetooth,
+#pulseaudio
 {
     font-size: 50px;
     background-position: center;
@@ -95,6 +96,16 @@ window#waybar {
     background-image: url('/home/onath/.config/waybar/icons/workspace-current-hover.svg');
 }
 
+#workspaces button.special
+{
+    background-image: url('/home/onath/.config/waybar/icons/workspace-special-inactive.svg');
+}
+
+#workspaces button.special:hover
+{
+    background-image: url('/home/onath/.config/waybar/icons/workspace-special-hover.svg');
+}
+
 #custom-new-workspace
 {
     background-image: url('/home/onath/.config/waybar/icons/new-workspace-inactive.svg');
@@ -105,13 +116,36 @@ window#waybar {
     background-image: url('/home/onath/.config/waybar/icons/new-workspace-hover.svg');
 }
 
+#pulseaudio
+{
+    background-image: url('/home/onath/.config/waybar/icons/audio-inactive.svg');
+}
+
+#pulseaudio:hover
+{
+    background-image: url('/home/onath/.config/waybar/icons/audio-hover.svg');
+}
+
+#pulseaudio.muted
+{
+    background-image: url('/home/onath/.config/waybar/icons/audio-muted-inactive.svg');
+}
+
+#pulseaudio.muted:hover
+{
+    background-image: url('/home/onath/.config/waybar/icons/audio-muted-hover.svg');
+}
+
 /*-----Indicators----*/
 #idle_inhibitor.activated {
     color: #2dcc36;
 }
+/* 
 #pulseaudio.muted {
     color: #cc3436;
 }
+
+*/
 #battery.charging {
     color: #2dcc36;
 }
@@ -127,8 +161,7 @@ window#waybar {
 
 
 #clock,
-#idle_inhibitor,
-#pulseaudio
+#idle_inhibitor
 {
     padding: 10px 25px;
     border-style: solid;
@@ -138,8 +171,7 @@ window#waybar {
 
 
 #clock:hover,
-#idle_inhibitor:hover,
-#pulseaudio:hover
+#idle_inhibitor:hover
 {
     background-color: rgba(0, 119, 179, 0.3);
     border-color: rgba(0, 119, 179, 0.9);
