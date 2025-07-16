@@ -15,7 +15,7 @@ pop_up_states = {}
 for name in window_names:
     pop_up_states[name] = {
         "active": False,
-        "focused": False,
+        "focused": True,
         "timer": 0,
     }
 
