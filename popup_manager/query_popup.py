@@ -6,6 +6,8 @@ import shlex
 import subprocess
 from pprint import pprint
 
+current_location = "/home/onath/.config/waybar/popup_manager/"
+
 
 def get_window_address(argument: str, message: list[dict]):
     if __debug__:
@@ -58,7 +60,7 @@ if pop_up_index not in window_names.keys():
 
 window_name = window_names[pop_up_index]
 bash_process_name = bash_processes[pop_up_index]
-with open("pop_up_states.json") as json_file:
+with open(current_location + "pop_up_states.json") as json_file:
     json_data = json.load(json_file)
 
 window_state = json_data[pop_up_index]
@@ -149,5 +151,5 @@ else:
 
 json_data[pop_up_index] = window_state
 
-with open("pop_up_states.json", "w") as json_file:
+with open(current_location + "pop_up_states.json", "w") as json_file:
     json.dump(json_data, json_file, indent=4)
