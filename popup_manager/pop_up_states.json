@@ -6,22 +6,22 @@
     },
     "blueman-manager": {
         "active": true,
-        "focused": true,
+        "focused": false,
         "timer": 0
     },
     "network": {
-        "active": false,
-        "focused": true,
+        "active": true,
+        "focused": false,
         "timer": 0
     },
     "pavucontrol": {
-        "active": false,
-        "focused": true,
+        "active": true,
+        "focused": false,
         "timer": 0
     },
     "calendar": {
-        "active": false,
-        "focused": true,
+        "active": true,
+        "focused": false,
         "timer": 0
     }
 }
