@@ -27,7 +27,7 @@
     "network": {
         //"format-wifi": "",
         "format-wifi": "    ",
-        "format-ethernet": "{ifname} ",
+        "format-ethernet": "    ",
         "format-disconnected": "", 
         "max-length": 50,
         "tooltip-format": "{signalStrength}%",
