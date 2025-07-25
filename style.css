@@ -1,9 +1,9 @@
 * {
     border: none;
     font-family: "Adwaita Sans", Roboto, Arial, sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     color: #ffffff;
-    border-radius: 30px;
+    border-radius: 27px;
 }
 
 window {
@@ -19,7 +19,7 @@ window#waybar {
 .modules-right,
 .modules-center,
 .modules-left {
-    margin: 5px 5px 5px 5px;
+    margin: 5px;
     background-color: rgba(0,119,179,0.3);
 }
 
@@ -32,12 +32,13 @@ window#waybar {
 /* styling for round svg buttons */ 
 #custom-power,
 #custom-new-workspace,
+#workspaces,
 #workspaces button,
 #network,
 #bluetooth,
 #pulseaudio
 {
-    font-size: 50px;
+    font-size: 35px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -163,7 +164,7 @@ window#waybar {
 #clock,
 #idle_inhibitor
 {
-    padding: 10px 25px;
+    padding: 5px 10px;
     border-style: solid;
     border-width: 3px;
     border-color: rgba(0, 119, 179, 0);
