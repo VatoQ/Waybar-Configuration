@@ -52,6 +52,7 @@ subprocess.run(f"cp -r popup_manager {TARGET_PATH}".split())
 # subprocess.run(f"cp calendar_script.sh {TARGET_PATH}".split())
 # subprocess.run(f"cp network_script.sh {TARGET_PATH}".split())
 subprocess.run(f"cp new_workspace_script.py {TARGET_PATH}".split())
+subprocess.run(f"cp config.jsonc {TARGET_PATH}".split())
 
 shell_names = [
     "audio_script.sh",
@@ -72,8 +73,8 @@ for s_name, s_content in zip(shell_names, shell_contents):
 with open(f"{TARGET_PATH}/style.css", "w") as css_file:
     css_file.write(css_content)
 
-with open(f"{TARGET_PATH}/config.jsonc", "w") as json_file:
-    json_file.write(json_content)
+# with open(f"{TARGET_PATH}/config.jsonc", "w") as json_file:
+#    json_file.write(json_content)
 
 
 subprocess.run("pkill waybar".split())
