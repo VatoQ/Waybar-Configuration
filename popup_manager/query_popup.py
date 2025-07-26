@@ -4,9 +4,12 @@ import argparse
 import json
 import shlex
 import subprocess
+import getpass
 from pprint import pprint
 
-current_location = "/home/onath/.config/waybar/popup_manager/"
+USER = getpass.getuser()
+
+current_location = f"/home/{USER}/.config/waybar/popup_manager/"
 
 
 def get_window_address(argument: str, message: list[dict]):
