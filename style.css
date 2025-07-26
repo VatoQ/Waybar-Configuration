@@ -1,28 +1,25 @@
 * {
     border: none;
     font-family: "Adwaita Sans", Roboto, Arial, sans-serif;
-    font-size: 25px;
     color: #ffffff;
-    border-radius: 30px;
+    border-radius: 25px;
 }
 
 window {
 	font-weight: bold;
 }
+
 window#waybar {
     background: rgba(0, 0, 0, 0);
 }
 
-
 /*-----module groups----*/ 
-
 .modules-right,
 .modules-center,
 .modules-left {
-    margin: 5px 5px 5px 5px;
-    background-color: rgba(0,119,179,0.3);
+    margin: 5px;
+    background-color: rgba(0,119,179,0.5);
 }
-
 
 #mode {
     color: #cc3436;
@@ -37,17 +34,35 @@ window#waybar {
 #bluetooth,
 #pulseaudio
 {
-    font-size: 50px;
+    font-size: 30px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    margin: 5px;
+    margin: 0px;
+    transition: background-image 0.3s ease-in-out;
+}
+
+/* For some reason, the workspaces are rendered 
+ * larger than the other widgets, so they need 
+ * their own section.
+ * */
+#workspaces,
+#workspaces button
+{
+    font-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0px;
+    padding: 0;
     transition: background-image 0.3s ease-in-out;
 }
 
 
+
 #custom-power {
     background-image: url('/home/onath/.config/waybar/icons/logout-inactive.svg');
+    margin-right: 5px;
 }
 
 #custom-power:hover
@@ -74,7 +89,6 @@ window#waybar {
     background-image: url('/home/onath/.config/waybar/icons/wifi-hover.svg');
 }
 
-
 #workspaces button
 {
     background-image: url('/home/onath/.config/waybar/icons/workspace-other-inactive.svg');
@@ -96,12 +110,12 @@ window#waybar {
     background-image: url('/home/onath/.config/waybar/icons/workspace-current-hover.svg');
 }
 
-#workspaces button.special
+#workspaces button.urgent 
 {
     background-image: url('/home/onath/.config/waybar/icons/workspace-special-inactive.svg');
 }
 
-#workspaces button.special:hover
+#workspaces button.urgent:hover
 {
     background-image: url('/home/onath/.config/waybar/icons/workspace-special-hover.svg');
 }
@@ -109,6 +123,7 @@ window#waybar {
 #custom-new-workspace
 {
     background-image: url('/home/onath/.config/waybar/icons/new-workspace-inactive.svg');
+    margin-right: 5px;
 }
 
 #custom-new-workspace:hover
@@ -119,6 +134,7 @@ window#waybar {
 #pulseaudio
 {
     background-image: url('/home/onath/.config/waybar/icons/audio-inactive.svg');
+    margin-right: 5px;
 }
 
 #pulseaudio:hover
@@ -135,6 +151,12 @@ window#waybar {
 {
     background-image: url('/home/onath/.config/waybar/icons/audio-muted-hover.svg');
 }
+
+#workspaces:first-child
+{
+    margin-left: 5px;
+}
+
 
 /*-----Indicators----*/
 #idle_inhibitor.activated {
@@ -161,20 +183,27 @@ window#waybar {
 
 
 #clock,
-#idle_inhibitor
+#idle_inhibitor,
+#battery
 {
-    padding: 10px 25px;
+    padding: 0px 10px;
     border-style: solid;
     border-width: 3px;
     border-color: rgba(0, 119, 179, 0);
+    transition: background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
 }
 
 
 #clock:hover,
-#idle_inhibitor:hover
+#idle_inhibitor:hover,
+#battery:hover
 {
     background-color: rgba(0, 119, 179, 0.3);
     border-color: rgba(0, 119, 179, 0.9);
+    color: rgba(0, 119, 179, 0.9);
+    transition: background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
 }
 
 

@@ -1,3 +1,5 @@
+// Feel free to change some of the settings around
+
 {
     "modules-left": [
         "hyprland/workspaces",
@@ -131,3 +133,4 @@
         "max-length": 25
     }
 }
+
