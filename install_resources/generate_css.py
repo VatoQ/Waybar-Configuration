@@ -66,7 +66,8 @@ selectors_icons = [
 icon_names = [
     "logout",
     "bluetooth",
-    "wifiworkspace-other",
+    "wifi",
+    "workspace-other",
     "workspace-current",
     "workspace-special",
     "new-workspace",
