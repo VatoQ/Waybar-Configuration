@@ -31,7 +31,8 @@
 
 #clock,
 #idle_inhibitor,
-#battery
+#battery,
+#backlight
 {
     padding: 0px 10px;
     border-style: solid;
@@ -43,7 +44,8 @@
 
 #clock:hover,
 #idle_inhibitor:hover,
-#battery:hover
+#battery:hover,
+#backlight:hover
 {
     background-color: rgba(0, 119, 179, 0.3);
     border-color: rgba(0, 119, 179, 0.9);
