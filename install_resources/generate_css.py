@@ -45,7 +45,7 @@ def choose_margin(current_user, selector, icon_name, **kwargs):
     if selector in ["custom-new-workspace", "custom-power"]:
         kwargs["margin"] = "right"
 
-    elif selector == "pulseaudio":
+    elif selector in ["pulseaudio", "network"]:
         kwargs["margin"] = "left"
 
     return generic_icon_style(current_user, selector, icon_name, **kwargs)
