@@ -62,4 +62,4 @@ with open(f"{TARGET_PATH}/config.jsonc", "w") as json_file:
 
 
 subprocess.run("pkill waybar".split())
-subprocess.run("waybar &".split())
+subprocess.Popen("waybar".split())
