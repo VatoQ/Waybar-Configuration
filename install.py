@@ -59,3 +59,7 @@ with open(f"{TARGET_PATH}/style.css", "w") as css_file:
 
 with open(f"{TARGET_PATH}/config.jsonc", "w") as json_file:
     json_file.write(json_content)
+
+
+subprocess.run("pkill waybar".split())
+subprocess.run("waybar &".split())
