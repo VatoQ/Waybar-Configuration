@@ -1,0 +1,59 @@
+* 
+{
+    border: none;
+    font-family: "Adwaita Sans", Roboto, Arial, sans-serif;
+    color: #ffffff;
+    border-radius: 25px;
+}
+
+window 
+{
+    font-weight: bold;
+}
+
+window#waybar 
+{
+    background: rgba(0, 0, 0, 0);
+}
+
+/*-----module groups----*/ 
+.modules-right,
+.modules-center,
+.modules-left 
+{
+    margin: 5px;
+    background-color: rgba(0,119,179,0.5);
+}
+
+/* styling for round svg buttons */ 
+#custom-power,
+#custom-new-workspace,
+#workspaces button,
+#network,
+#bluetooth,
+#pulseaudio
+{
+    font-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0px;
+    transition: background-image 0.3s ease-in-out;
+}
+
+/* For some reason, the workspaces are rendered 
+ * larger than the other widgets, so they need 
+ * their own section.
+ * */
+#workspaces,
+#workspaces button
+{
+    font-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0px;
+    padding: 0;
+    transition: background-image 0.3s ease-in-out;
+}
+
