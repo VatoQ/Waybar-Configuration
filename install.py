@@ -51,7 +51,7 @@ subprocess.run(f"cp -r popup_manager {TARGET_PATH}".split())
 # subprocess.run(f"cp bluetooth_script.sh {TARGET_PATH}".split())
 # subprocess.run(f"cp calendar_script.sh {TARGET_PATH}".split())
 # subprocess.run(f"cp network_script.sh {TARGET_PATH}".split())
-# subprocess.run(f"cp new_workspace_script.py {TARGET_PATH}".split())
+subprocess.run(f"cp new_workspace_script.py {TARGET_PATH}".split())
 
 shell_names = [
     "audio_script.sh",
