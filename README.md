@@ -1,15 +1,20 @@
 # Waybar Configuration
 
-![Screenshot](https://private-user-images.githubusercontent.com/147531079/466640175-31f14eb3-ee44-49ef-8316-8c84cc6711c2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI2MDMxNjksIm5iZiI6MTc1MjYwMjg2OSwicGF0aCI6Ii8xNDc1MzEwNzkvNDY2NjQwMTc1LTMxZjE0ZWIzLWVlNDQtNDllZi04MzE2LThjODRjYzY3MTFjMi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNVQxODA3NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03OWNkZDQzMGMxYjNkYmE2YzM1MzMzNmRlMWZiZDA0MGIyNTkxOGU3ODk3MTc1YzRmMzQyYTIyMzk3MWQ3ZDY2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.6CxdB33XNDsDT6WAtMvaJobkcGBpLagcasi0aU_NkNc)
+![example screenshot](./screenshots/example.png)
 
+Configuring waybar to look a little more modern.
 
+## Required packages
 
-## Required Packages:
-  - pavucontrol
-  - blueman-manager
-  - gnome-calendar
-  - nm-connection-editor
+- waybar
+- pavucontrol
+- blueman-manager
+- nm-connection-editor
 
+## Installation
 
-## Getting the applets to work
-make scripts executable with `sudo chmod +x <script name>`
+```
+git clone https://github.com/VatoQ/Waybar-Configuration.git
+cd Waybar-Configuration
+./install.py
+```
