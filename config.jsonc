@@ -1,26 +1,36 @@
 {
-    "modules-left": ["hyprland/workspaces", "custom/new-workspace"],
-    "modules-center": ["clock", "idle_inhibitor", "pulseaudio"],
-    "modules-right": ["custom/scratchpad-indicator", "network", "bluetooth", "custom/power"],
-
-    "hyprland/workspaces" : {
-        "format": "{icon}",
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/new-workspace"
+    ],
+    "modules-center": [
+        "clock",
+        // "idle_inhibitor",
+        "pulseaudio"
+    ],
+    "modules-right": [
+        "custom/scratchpad-indicator",
+        "network",
+        "bluetooth",
+        "battery",
+        "custom/power"
+    ],
+    "hyprland/workspaces": {
+        "format": "    ",
         "format-icons": {
-		        //"active": "",
-		        //"default": ""
+            //"active": "",
+            //"default": ""
             "active": "    ",
             "default": "    ",
-          },
+        },
         "tooltip-format": "Workspace {name}"
-      },
-
-    "custom/new-workspace" : {
+    },
+    "custom/new-workspace": {
         //"format": "",
         "format": "    ",
         "tooltip-format": "Create a new workspace",
         "on-click": "~/.config/waybar/new_workspace_script.py",
     },
-
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -28,7 +38,7 @@
         //"format-wifi": "",
         "format-wifi": "    ",
         "format-ethernet": "    ",
-        "format-disconnected": "", 
+        "format-disconnected": "    ",
         "max-length": 50,
         "tooltip-format": "{signalStrength}%",
         "on-click": "~/.config/waybar/network_script.sh"
@@ -47,7 +57,7 @@
     "clock": {
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%d:%m:%Y}", //"{:%Y-%m-%d}"
-		"on-click": "~/.config/waybar/calendar_script.sh"
+        "on-click": "~/.config/waybar/calendar_script.sh"
     },
     "pulseaudio": {
         //"format": "{icon}",
@@ -72,12 +82,12 @@
         },
         "on-click": "~/.config/waybar/audio_script.sh"
     },
-	"custom/power": {
-		//"format": "",
-    "format": "    ",
-		"on-click": "wlogout",
-    "tooltip-format": "Logout..."
-	},
+    "custom/power": {
+        //"format": "",
+        "format": "    ",
+        "on-click": "wlogout",
+        "tooltip-format": "Logout..."
+    },
     "custom/scratchpad-indicator": {
         "format-text": "{}hi",
         "return-type": "json",
@@ -87,7 +97,7 @@
         "on-click": "swaymsg 'scratchpad show'",
         "on-click-right": "swaymsg 'move scratchpad'"
     },
-  "bluetooth": {
+    "bluetooth": {
         // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
         // "format": "󰂯 {status}",
         // format-* handles every state, so default format is not necessary.
@@ -102,5 +112,22 @@
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "on-click": "~/.config/waybar/bluetooth_script.sh" // "blueman-manager",
+    },
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "max-length": 25
     }
 }
