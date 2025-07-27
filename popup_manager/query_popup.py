@@ -152,13 +152,15 @@ elif window_state["active"] and not window_state["focused"]:
             )
 
         else:
-            print("\t\taddress found")
+            if __debug__:
+                print("\t\taddress found")
             subprocess.run(
                 f"hyprctl dispatch movetoworkspacesilent {current_workspace_id}, class:^({window_name})$".split()
             )
 
     else:
-        print(f"\tMoving window to workspace {current_workspace_id}")
+        if __debug__:
+            print(f"\tMoving window to workspace {current_workspace_id}")
         subprocess.run(
             f"hyprctl dispatch movetoworkspacesilent {current_workspace_id}, class:^({window_name})$".split()
         )
