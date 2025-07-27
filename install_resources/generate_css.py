@@ -1,4 +1,18 @@
 def generic_icon_style(current_user, selector, icon_name, **kwargs):
+    """
+    Generates css to style an icon for a specified selector.
+
+    can also add the hover selector if specified in `**kwargs` viw `hover = True`
+
+    Parameters
+    ----------
+    current_user : str
+        current user to ensure correct path to icons.
+    selector : str
+        the selector corresponding to the waybar element to be styled.
+    icon_name : str
+        name of the icon for the specified selector.
+    """
     out = [f"#{selector}", "\n", "{\n"]
 
     if kwargs.get("hover", None) and kwargs.get("hover") is True:
@@ -10,8 +24,6 @@ def generic_icon_style(current_user, selector, icon_name, **kwargs):
     image_url = f"/home/{current_user}/.config/waybar/icons/{icon_name}.svg"
 
     image_style = f"    background-image: url('{image_url}');\n"
-
-    # out.append(image_style)
 
     out += [image_style]
 
@@ -42,6 +54,20 @@ def generic_icon_style(current_user, selector, icon_name, **kwargs):
 
 
 def choose_margin(current_user, selector, icon_name, **kwargs):
+    """
+    Determins if a margin should be applied to the style.
+
+    This puts a margin on icons that are at the borders of selections.
+
+    Parameters
+    ----------
+    current_user : str
+        current user to ensure correct path to icons.
+    selector : str
+        the selector corresponding to the waybar element to be styled.
+    icon_name : str
+        name of the icon for the specified selector.
+    """
     if selector in ["custom-new-workspace", "custom-power"]:
         kwargs["margin"] = "right"
 
@@ -77,6 +103,23 @@ icon_names = [
 
 
 def generate_css(current_user) -> str:
+    """
+    Generates the css styling for waybar.
+
+    Some styling contains absolute paths to icons.
+    These paths must be correctly generated at each installation.
+    This is why css is generated and not copied.
+
+    Parameters
+    ----------
+    current_user : str
+        current user to ensure correct installation.
+
+    Returns
+    -------
+    str
+        content of the css file as a string.
+    """
     with open("install_resources/css_beginning.txt", "r") as css_file:
         file_beginning = css_file.readlines()
 

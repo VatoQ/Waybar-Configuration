@@ -10,6 +10,19 @@ DOES_NOT_EXIST_STATUS = 1
 
 
 def get_target_path(test, current_user):
+    """
+    Returns the target path of the installation
+
+    Depending on which mode the script runs on, it is either the `.config` directory or in Documents
+
+    Parameters
+    ----------
+    test : bool
+
+        sets the mode of the script
+    current_user : str
+        current user to ensure a working installation.
+    """
     if test:
         return f"/home/{current_user}/Documents/Private/Coding/Python/TestWaybarInstall"
 
@@ -43,14 +56,10 @@ css_content = generate_css(current_user)
 
 json_content = generate_json(current_user)
 
-
+# Copy resource directories to .config/waybar
 subprocess.run(f"cp -r icons {TARGET_PATH}".split())
 subprocess.run(f"cp -r popup_manager {TARGET_PATH}".split())
-
-# subprocess.run(f"cp audio_script.sh {TARGET_PATH}".split())
-# subprocess.run(f"cp bluetooth_script.sh {TARGET_PATH}".split())
-# subprocess.run(f"cp calendar_script.sh {TARGET_PATH}".split())
-# subprocess.run(f"cp network_script.sh {TARGET_PATH}".split())
+# Copy scripts to .config/waybar
 subprocess.run(f"cp new_workspace_script.py {TARGET_PATH}".split())
 subprocess.run(f"cp config.jsonc {TARGET_PATH}".split())
 
@@ -72,9 +81,6 @@ for s_name, s_content in zip(shell_names, shell_contents):
 
 with open(f"{TARGET_PATH}/style.css", "w") as css_file:
     css_file.write(css_content)
-
-# with open(f"{TARGET_PATH}/config.jsonc", "w") as json_file:
-#    json_file.write(json_content)
 
 
 subprocess.run("pkill waybar".split())

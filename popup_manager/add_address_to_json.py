@@ -32,6 +32,12 @@ window_state = json_data[pop_up_index]
 
 
 def get_window_address(argument: str, message: list[dict]):
+    """
+    Look up window address in the cache, based on the argument passed on call.
+
+    :param argument: valid arguments are the following:
+    :param message: List of hyprctl cliens
+    """
     if __debug__:
         print(f"\t\tEntering get_window_address({argument})")
     for item in message:
