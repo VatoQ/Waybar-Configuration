@@ -2,7 +2,8 @@
 
 ![example screenshot](./screenshots/example.png)
 
-Configuring waybar to look a little more modern.
+Configuring waybar to look a little more modern. There is also a
+daemon to manage the applets launched by some of the buttons.
 
 ## Required packages
 
@@ -18,7 +19,9 @@ Configuring waybar to look a little more modern.
 
 ## Installation
 
-In a preferred directory, as long as it is not `~/.config/waybar`:
+You probably want to backup your existing waybar config, as
+the install script will delete `~/.config/waybar/*` without asking.
+In a directory that is not `~/.config/waybar`, run:
 
 ```
 git clone https://github.com/VatoQ/Waybar-Configuration.git
