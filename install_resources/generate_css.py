@@ -1,3 +1,20 @@
+# Copyright (c) 2025 VatoQ
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+
 def generic_icon_style(current_user, selector, icon_name, **kwargs):
     """
     Generates css to style an icon for a specified selector.
@@ -100,9 +117,38 @@ icon_names = [
     "audio",
     "audio-muted",
 ]
+global_selector = [
+    "*\n",
+    "{\n",
+    "    border: none;\n",
+    '    font-family: "Adwaita Sans", Roboto, Arial, sans-serif;\n',
+    "    color: #ffffff;\n",
+    "    border-radius: 25px;\n",
+]
 
 
-def generate_css(current_user) -> str:
+button_selector = [
+    "#custom-power,\n",
+    "#custom-new-workspace,\n",
+    "#workspaces button,\n",
+    "#network,\n",
+    "#bluetooth,\n",
+    "#pulseaudio,\n",
+    "#workspaces,\n",
+    "#workspaces button\n{\n",
+]
+
+button_rest = [
+    "    background-position: center;\n",
+    "    background-repeat: no-repeat;\n",
+    "    background-size: contain;\n",
+    "    margin: 0px;\n",
+    "    transition: background-image 0.3s ease-in-out;\n",
+    "}\n\n",
+]
+
+
+def generate_css(current_user, **kwargs) -> str:
     """
     Generates the css styling for waybar.
 
@@ -122,6 +168,18 @@ def generate_css(current_user) -> str:
     """
     with open("install_resources/css_beginning.txt", "r") as css_file:
         file_beginning = css_file.readlines()
+
+    font_size = 30
+    if kwargs.get("font_size", None):
+        font_size = kwargs["font_size"]
+
+    prefix = global_selector + [f"    font-size: {int(0.5 * font_size)}px;\n", "}\n\n"]
+
+    file_beginning += prefix
+
+    button_style = button_selector + [f"    font-size: {font_size}px;\n"] + button_rest
+
+    file_beginning += button_style
 
     for selector, icon_name in zip(selectors_icons, icon_names):
         inactive_icon = choose_margin(current_user, selector, icon_name, hover=False)
