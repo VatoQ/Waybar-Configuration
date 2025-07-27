@@ -12,7 +12,7 @@ Configuring waybar to look a little more modern.
 - gnome-calendar
 - nm-connection-editor
 
-## Reccomended packages
+## Recommended packages
 
 - bluez-utils
 
