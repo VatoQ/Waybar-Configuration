@@ -21,6 +21,7 @@ Initialize states of the pop up windows.
 """
 
 import json
+from config import Config
 
 TIMER_MINUTES = 30
 
@@ -33,8 +34,10 @@ for name in window_names:
     pop_up_states[name] = {
         "active": False,
         "focused": True,
-        "timer": 0,
+        # "timer": 0,
     }
 
-with open("pop_up_states.json", "w") as json_file:
+out_path = f"{Config.TARGET_PATH}/popup_manager/pop_up_states.json"
+
+with open(out_path, "w") as json_file:
     json.dump(pop_up_states, json_file, indent=4)
