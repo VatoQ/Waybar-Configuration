@@ -9,6 +9,9 @@ EXISTS_STATUS = 0
 DOES_NOT_EXIST_STATUS = 1
 
 
+states_found = False
+
+
 def get_target_path(test, current_user):
     """
     Returns the target path of the installation
@@ -42,6 +45,18 @@ if target_path_status != EXISTS_STATUS:
     )
 else:
     print("Replacing contents of waybar config")
+
+    json_status = subprocess.call(
+        ["test", "-e", f"{TARGET_PATH}/popup_manager/pop_up_states.json"]
+    )
+
+    if json_status != EXISTS_STATUS:
+        print("caching existing pop up state cache")
+        states_found = True
+        subprocess.run(
+            f"mv {TARGET_PATH}/popup_manager/pop_up_states.json cache".split()
+        )
+
     shell_output = subprocess.run(
         f"rm -rf {TARGET_PATH}".split(), stdout=subprocess.PIPE
     ).stdout.decode()
@@ -85,3 +100,7 @@ with open(f"{TARGET_PATH}/style.css", "w") as css_file:
 
 subprocess.run("pkill waybar".split())
 subprocess.Popen("waybar".split())
+
+if states_found:
+    print("restoring pop up state cache")
+    subprocess.run(f"mv cache/pop_up_states.json {TARGET_PATH}/popup_manager/".split())
