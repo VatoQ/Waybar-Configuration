@@ -16,7 +16,12 @@
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 
-from install_resources import generate_css, generate_json, generate_shell_scripts
+from install_resources import (
+    generate_css,
+    generate_json,
+    generate_shell_scripts,
+    generate_init,
+)
 import getpass
 import subprocess
 import argparse
@@ -75,6 +80,8 @@ css_content = generate_css(current_user, font_size=font_size)
 
 json_content = generate_json(current_user)
 
+initializing_content = generate_init(current_user)
+
 # Copy resource directories to .config/waybar
 subprocess.run(f"cp -r icons {Config.TARGET_PATH}".split())
 subprocess.run(f"cp -r popup_manager {Config.TARGET_PATH}".split())
@@ -101,6 +108,11 @@ for s_name, s_content in zip(shell_names, shell_contents):
 with open(f"{Config.TARGET_PATH}/style.css", "w") as css_file:
     css_file.write(css_content)
 
+with open(
+    f"{Config.TARGET_PATH}/{Config.DAEMON_DIR}/initialize_states.py", "w"
+) as init_file:
+    init_file.write(initializing_content)
+
 # POST INSTALLATION PROCESSES -----------------------------------------------------------------------------------------------------
 
 subprocess.run("pkill waybar".split())
@@ -109,5 +121,5 @@ subprocess.Popen("waybar".split())
 if states_found:
     print("restoring pop up state cache")
     subprocess.run(
-        f"mv cache/pop_up_states.json {Config.TARGET_PATH}/popup_manager/".split()
+        f"mv cache/pop_up_states.json {Config.TARGET_PATH}/{Config.DAEMON_DIR}/".split()
     )
