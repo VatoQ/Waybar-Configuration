@@ -25,3 +25,7 @@ git clone https://github.com/VatoQ/Waybar-Configuration.git
 cd Waybar-Configuration
 ./install.py
 ```
+
+### Options for install command
+
+- `--font_size`: integer
