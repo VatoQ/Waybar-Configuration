@@ -13,6 +13,12 @@ current_location = f"/home/{USER}/.config/waybar/popup_manager/"
 
 
 def get_window_address(argument: str, message: list[dict]):
+    """
+    Search the message given from hyprland for the given argument to return the window address.
+
+    :param argument: classname of the window.
+    :param message: list of windows in a specific domain.
+    """
     if __debug__:
         print(f"\t\tEntering get_window_address({argument})")
     for item in message:
