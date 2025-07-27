@@ -31,7 +31,9 @@ window#waybar
 #workspaces button,
 #network,
 #bluetooth,
-#pulseaudio
+#pulseaudio,
+#workspaces,
+#workspaces button
 {
     font-size: 30px;
     background-position: center;
@@ -42,9 +44,11 @@ window#waybar
 }
 
 /* For some reason, the workspaces are rendered 
- * larger than the other widgets, so they need 
- * their own section.
- * */
+ * larger than the other widgets on some systems, so they need 
+ * their own section if that is the case.
+ * */ 
+
+/* 
 #workspaces,
 #workspaces button
 {
@@ -56,4 +60,4 @@ window#waybar
     padding: 0;
     transition: background-image 0.3s ease-in-out;
 }
-
+*/

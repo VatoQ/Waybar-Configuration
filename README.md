@@ -8,10 +8,17 @@ Configuring waybar to look a little more modern.
 
 - waybar
 - pavucontrol
-- blueman-manager
+- bluez
+- gnome-calendar
 - nm-connection-editor
 
+## Reccomended packages
+
+- bluez-utils
+
 ## Installation
+
+In a preferred directory, as long as it is not `~/.config/waybar`:
 
 ```
 git clone https://github.com/VatoQ/Waybar-Configuration.git
