@@ -1,1 +1,1 @@
-# Directory to cache temporary files during intstallation
+# Directory to cache temporary files during installation
