@@ -15,7 +15,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 
-def generate_shell_scripts(current_user):
+def generate_shell_scripts(current_user:str):
     """
     Generates the shell scripts that are called by waybar.
 

@@ -14,8 +14,7 @@
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
-
-def generic_icon_style(current_user, selector, icon_name, **kwargs):
+def generic_icon_style(current_user:str, selector:str, icon_name:str, **kwargs:bool|str):
     """
     Generates css to style an icon for a specified selector.
 
@@ -70,7 +69,7 @@ def generic_icon_style(current_user, selector, icon_name, **kwargs):
     return out
 
 
-def choose_margin(current_user, selector, icon_name, **kwargs):
+def choose_margin(current_user:str, selector:str, icon_name:str, **kwargs:bool|str):
     """
     Determins if a margin should be applied to the style.
 
@@ -148,7 +147,7 @@ button_rest = [
 ]
 
 
-def generate_css(current_user, **kwargs) -> str:
+def generate_css(current_user:str, **kwargs:int|str) -> str:
     """
     Generates the css styling for waybar.
 
@@ -173,6 +172,7 @@ def generate_css(current_user, **kwargs) -> str:
     if kwargs.get("font_size", None):
         font_size = kwargs["font_size"]
 
+    assert isinstance(font_size, int)
     prefix = global_selector + [f"    font-size: {int(0.5 * font_size)}px;\n", "}\n\n"]
 
     file_beginning += prefix
