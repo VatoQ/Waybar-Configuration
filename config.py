@@ -20,16 +20,16 @@ class Config:
     def __new__(cls):
         raise TypeError(f"{cls.__name__} cannot be instantiated")
 
-    TARGET_PATH = ""
+    TARGET_PATH:str = ""
 
-    DAEMON_DIR = "popup_manager"
+    DAEMON_DIR:str = "popup_manager"
 
-    EXISTS_STATUS = 0
+    EXISTS_STATUS:int = 0
 
-    DOES_NOT_EXIST_STATUS = 1
+    DOES_NOT_EXIST_STATUS:int = 1
 
     @classmethod
-    def set_target_path(cls, current_user):
+    def set_target_path(cls, current_user:str):
         """
         Returns the target path of the installation
 
