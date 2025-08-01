@@ -52,7 +52,7 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d:%m:%Y}", //"{:%Y-%m-%d}"
+        "format-alt": "{:%d:%m:%Y}",
         "on-click": "~/.config/waybar/calendar_script.sh"
     },
     "pulseaudio": {
@@ -97,7 +97,7 @@
     },
     "battery": {
         "bat": "BAT0",
-        "interval": 60,
+        "interval": 4,
         "states": {
             "warning": 30,
             "critical": 15
