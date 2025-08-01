@@ -31,4 +31,12 @@ cd Waybar-Configuration
 
 ### Options for install command
 
+<!----------------------
 - `--font_size`: integer
+----------------------->
+
+| **Option** | **Type** | **Unit** |
+-------------|----------|-----------
+| `--font_size`| integer|px|
+
+
