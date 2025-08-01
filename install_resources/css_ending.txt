@@ -3,17 +3,19 @@
 {
     margin-left: 5px;
 }
-
+/*
+0, 197, 71, 90
+*/
 
 /*-----Indicators----*/
 #idle_inhibitor.activated 
 {
-    color: #2dcc36;
+    color: rgba(0, 197, 71, 90);
 }
 
 #battery.charging 
 {
-    color: #2dcc36;
+    color: rgba(0, 197, 71, 90);
 }
 
 #battery.warning:not(.charging) 

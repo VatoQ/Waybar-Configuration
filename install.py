@@ -54,9 +54,11 @@ if target_path_status != Config.EXISTS_STATUS:
 else:
     print("Replacing contents of waybar config")
 
-    json_status = subprocess.call(
-        ["test", "-e", f"{Config.TARGET_PATH}/{Config.DAEMON_DIR}/pop_up_states.json"]
-    )
+    json_status = subprocess.call([
+        "test",
+        "-e",
+        f"{Config.TARGET_PATH}/{Config.DAEMON_DIR}/pop_up_states.json",
+    ])
 
     if json_status != Config.EXISTS_STATUS:
         print("caching existing pop up state cache")
