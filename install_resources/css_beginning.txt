@@ -22,7 +22,7 @@ window
 
 window#waybar 
 {
-    background: rgba(0, 0, 0, 0);
+    background: rgba(100, 119, 179, 0.25);
 }
 
 /*-----module groups----*/ 
