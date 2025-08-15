@@ -20,19 +20,7 @@ window
     font-weight: bold;
 }
 
-window#waybar 
-{
-    background: rgba(100, 119, 179, 0.25);
-}
 
-/*-----module groups----*/ 
-.modules-right,
-.modules-center,
-.modules-left 
-{
-    margin: 5px;
-    background-color: rgba(0,119,179,0.5);
-}
 
 /* For some reason, the workspaces are rendered 
  * larger than the other widgets on some systems, so they need 

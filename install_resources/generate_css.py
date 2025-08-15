@@ -1,3 +1,6 @@
+from theme import theme_data
+from config import Config
+
 
 def generic_icon_style(current_user:str, selector:str, icon_name:str, **kwargs:bool|str):
     """
@@ -134,6 +137,20 @@ button_rest = [
     "}\n\n",
 ]
 
+window_waybar = [
+    "window#waybar\n",
+    "{\n",
+]
+
+module_groups = [
+    "/*----module groups----*/\n",
+    ".modules-right,\n",
+    ".modules-center,\n",
+    ".modules-left\n",
+    "{\n",
+    "    margin: 5px;\n"
+]
+
 
 def generate_css(current_user:str, **kwargs:int|str) -> str:
     """
@@ -160,7 +177,29 @@ def generate_css(current_user:str, **kwargs:int|str) -> str:
     if kwargs.get("font_size", None):
         font_size = kwargs["font_size"]
 
+    color_theme = Config.DARK
+
+    if kwargs.get("theme", None) and kwargs.get("theme") in [Config.DARK, Config.MEDIUM, Config.LIGHT]:
+        color_theme = kwargs.get("theme")
+    assert isinstance(color_theme, str)
+    window_style = window_waybar + [
+        f"    background: {theme_data[color_theme][Config.BACKGROUND]};\n",
+        "}\n\n"
+    ]
+    file_beginning += window_style
+
+
+    module_groups_style = module_groups + [
+        f"    background-color: {theme_data[color_theme][Config.GROUP]};\n",
+        "}\n\n"
+    ]
+
+    file_beginning += module_groups_style
+
+    
     assert isinstance(font_size, int)
+
+
     prefix = global_selector + [f"    font-size: {int(0.5 * font_size)}px;\n", "}\n\n"]
 
     file_beginning += prefix
