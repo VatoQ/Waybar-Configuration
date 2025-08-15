@@ -1,3 +1,4 @@
+
 def generate_json(current_user: str) -> str:
     """
     Generates the json file to config waybar.

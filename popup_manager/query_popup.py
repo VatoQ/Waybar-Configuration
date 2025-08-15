@@ -1,19 +1,4 @@
 #!/bin/python
-# Copyright (c) 2025 VatoQ
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 import argparse
 import json
@@ -21,13 +6,17 @@ import shlex
 import subprocess
 import getpass
 from pprint import pprint
+from typing import TypeAlias
+
+JSON_INNER: TypeAlias = dict[str, bool]
+JSON_OUTER: TypeAlias = dict[str, JSON_INNER]
 
 USER = getpass.getuser()
 
 current_location = f"/home/{USER}/.config/waybar/popup_manager/"
 
 
-def get_window_address(argument: str, message: list[dict]):
+def get_window_address(argument: str, message: list[dict[str,str]]):
     """
     Search the message given from hyprland for the given argument to return the window address.
 
@@ -59,9 +48,9 @@ pop_up_name_help = (
 )
 
 parser = argparse.ArgumentParser()
-parser.add_argument("pop_up_index", help=pop_up_name_help, type=str)
+parser.add_argument("pop_up_index", help=pop_up_name_help, type=str) # type: ignore
 args = parser.parse_args()
-pop_up_index = args.pop_up_index
+pop_up_index = args.pop_up_index # type: ignore
 
 
 window_names = {
@@ -85,7 +74,7 @@ if pop_up_index not in window_names.keys():
 window_name = window_names[pop_up_index]
 bash_process_name = bash_processes[pop_up_index]
 with open(current_location + "pop_up_states.json") as json_file:
-    json_data = json.load(json_file)
+    json_data:JSON_OUTER = json.load(json_file)
 
 window_state = json_data[pop_up_index]
 

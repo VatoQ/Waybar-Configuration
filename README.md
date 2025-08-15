@@ -1,6 +1,14 @@
 # Waybar Configuration
 
-![example screenshot](./screenshots/example.png)
+
+### Dark
+![dark screenshot](./screenshots/dark_theme.png)
+### Medium
+![dark screenshot](./screenshots/medium_theme.png)
+### Light
+![dark screenshot](./screenshots/light_theme.png)
+
+
 
 Configuring waybar to look a little more modern. There is also a
 daemon to manage the applets launched by some of the buttons.
@@ -31,4 +39,15 @@ cd Waybar-Configuration
 
 ### Options for install command
 
+<!----------------------
 - `--font_size`: integer
+----------------------->
+
+| **Option** | **Type** | **Unit** |
+|------------|----------|----------|
+| `--font_size`| integer|px|
+| `--theme` | string | ["dark", "medium", "light"] |
+
+
+
+

@@ -1,21 +1,8 @@
-# Copyright (c) 2025 VatoQ
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+from theme import theme_data
+from config import Config
 
 
-def generic_icon_style(current_user, selector, icon_name, **kwargs):
+def generic_icon_style(current_user:str, selector:str, icon_name:str, **kwargs:bool|str):
     """
     Generates css to style an icon for a specified selector.
 
@@ -70,7 +57,7 @@ def generic_icon_style(current_user, selector, icon_name, **kwargs):
     return out
 
 
-def choose_margin(current_user, selector, icon_name, **kwargs):
+def choose_margin(current_user:str, selector:str, icon_name:str, **kwargs:bool|str):
     """
     Determins if a margin should be applied to the style.
 
@@ -88,13 +75,14 @@ def choose_margin(current_user, selector, icon_name, **kwargs):
     if selector in ["custom-new-workspace", "custom-power"]:
         kwargs["margin"] = "right"
 
-    elif selector in ["pulseaudio", "network"]:
+    elif selector in ["pulseaudio", "network", "custom-menu"]:
         kwargs["margin"] = "left"
 
     return generic_icon_style(current_user, selector, icon_name, **kwargs)
 
 
 selectors_icons = [
+    "custom-menu",
     "custom-power",
     "bluetooth",
     "network",
@@ -107,6 +95,7 @@ selectors_icons = [
 ]
 
 icon_names = [
+    "menu",
     "logout",
     "bluetooth",
     "wifi",
@@ -130,6 +119,7 @@ global_selector = [
 button_selector = [
     "#custom-power,\n",
     "#custom-new-workspace,\n",
+    "#custom-menu,\n",
     "#workspaces button,\n",
     "#network,\n",
     "#bluetooth,\n",
@@ -147,8 +137,22 @@ button_rest = [
     "}\n\n",
 ]
 
+window_waybar = [
+    "window#waybar\n",
+    "{\n",
+]
 
-def generate_css(current_user, **kwargs) -> str:
+module_groups = [
+    "/*----module groups----*/\n",
+    ".modules-right,\n",
+    ".modules-center,\n",
+    ".modules-left\n",
+    "{\n",
+    "    margin: 5px;\n"
+]
+
+
+def generate_css(current_user:str, **kwargs:int|str) -> str:
     """
     Generates the css styling for waybar.
 
@@ -172,6 +176,29 @@ def generate_css(current_user, **kwargs) -> str:
     font_size = 30
     if kwargs.get("font_size", None):
         font_size = kwargs["font_size"]
+
+    color_theme = Config.DARK
+
+    if kwargs.get("theme", None) and kwargs.get("theme") in [Config.DARK, Config.MEDIUM, Config.LIGHT]:
+        color_theme = kwargs.get("theme")
+    assert isinstance(color_theme, str)
+    window_style = window_waybar + [
+        f"    background: {theme_data[color_theme][Config.BACKGROUND]};\n",
+        "}\n\n"
+    ]
+    file_beginning += window_style
+
+
+    module_groups_style = module_groups + [
+        f"    background-color: {theme_data[color_theme][Config.GROUP]};\n",
+        "}\n\n"
+    ]
+
+    file_beginning += module_groups_style
+
+    
+    assert isinstance(font_size, int)
+
 
     prefix = global_selector + [f"    font-size: {int(0.5 * font_size)}px;\n", "}\n\n"]
 
