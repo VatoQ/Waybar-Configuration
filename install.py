@@ -89,7 +89,7 @@ subprocess.run(f"cp -r icons {Config.TARGET_PATH}".split())
 subprocess.run(f"cp -r popup_manager {Config.TARGET_PATH}".split())
 # Copy scripts to .config/waybar
 subprocess.run(f"cp new_workspace_script.py {Config.TARGET_PATH}".split())
-subprocess.run(f"cp config.jsonc {Config.TARGET_PATH}".split())
+# subprocess.run(f"cp config.jsonc {Config.TARGET_PATH}".split())
 
 shell_names = [
     "audio_script.sh",
@@ -109,6 +109,9 @@ for s_name, s_content in zip(shell_names, shell_contents):
 
 with open(f"{Config.TARGET_PATH}/style.css", "w") as css_file:
     css_file.write(css_content)
+
+with open(f"{Config.TARGET_PATH}/config.jsonc", "w") as jsonc_file:
+    jsonc_file.write(json_content)
 
 with open(
     f"{Config.TARGET_PATH}/{Config.DAEMON_DIR}/initialize_states.py", "w"
