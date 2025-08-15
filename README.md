@@ -4,9 +4,9 @@
 ### Dark
 ![dark screenshot](./screenshots/dark_theme.png)
 ### Medium
-![dark screenshot](./screenshots/medium_theme.png)
+![medium screenshot](./screenshots/medium_theme.png)
 ### Light
-![dark screenshot](./screenshots/light_theme.png)
+![light screenshot](./screenshots/light_theme.png)
 
 
 
