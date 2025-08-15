@@ -16,6 +16,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 
+from ast import arg
 from install_resources import (
     generate_css,
     generate_json,
@@ -30,13 +31,27 @@ from config import Config
 
 # CALL ARGUMENT SECION -------------------------------------------------------------------------------------------------------
 font_size_help = "specify the font size that the waybar elements are displayed at"
+theme_help = "specify the theme. One of [dark, medium, light]"
 arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument(
-    "--font_size", nargs="?", help=font_size_help, const=30, type=int
+    "--font_size", 
+    nargs="?", 
+    help=font_size_help, 
+    const=30, 
+    type=int
+)
+arg_parser.add_argument(
+    "--theme", 
+    nargs="?",
+    help=theme_help,
+    const=Config.DARK,
+    type=str
 )
 args = arg_parser.parse_args()
 
 font_size = args.font_size
+theme = args.theme
+
 
 
 # PATH INITIALIZATION ---------------------------------------------------------------------------------------------------------
@@ -78,7 +93,11 @@ shell_output = subprocess.run(
 
 # CODE GENERATION AND INSTALLATION ---------------------------------------------------------------------------------------------------------------------------------------------
 
-css_content = generate_css(current_user, font_size=font_size)
+css_content = generate_css(
+    current_user, 
+    font_size=font_size, 
+    theme=theme
+)
 
 json_content = generate_json(current_user)
 
