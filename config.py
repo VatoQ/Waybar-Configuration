@@ -11,6 +11,13 @@ class Config:
     EXISTS_STATUS:int = 0
 
     DOES_NOT_EXIST_STATUS:int = 1
+    
+    LIGHT:str = "light"
+    MEDIUM:str = "medium"
+    DARK:str = "dark"
+
+    BACKGROUND:str = "background"
+    GROUP:str = "group"
 
     @classmethod
     def set_target_path(cls, current_user:str):
