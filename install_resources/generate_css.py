@@ -1,18 +1,3 @@
-# Copyright (c) 2025 VatoQ
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 def generic_icon_style(current_user:str, selector:str, icon_name:str, **kwargs:bool|str):
     """
@@ -87,13 +72,14 @@ def choose_margin(current_user:str, selector:str, icon_name:str, **kwargs:bool|s
     if selector in ["custom-new-workspace", "custom-power"]:
         kwargs["margin"] = "right"
 
-    elif selector in ["pulseaudio", "network"]:
+    elif selector in ["pulseaudio", "network", "custom-menu"]:
         kwargs["margin"] = "left"
 
     return generic_icon_style(current_user, selector, icon_name, **kwargs)
 
 
 selectors_icons = [
+    "custom-menu",
     "custom-power",
     "bluetooth",
     "network",
@@ -106,6 +92,7 @@ selectors_icons = [
 ]
 
 icon_names = [
+    "menu",
     "logout",
     "bluetooth",
     "wifi",
@@ -129,6 +116,7 @@ global_selector = [
 button_selector = [
     "#custom-power,\n",
     "#custom-new-workspace,\n",
+    "#custom-menu,\n",
     "#workspaces button,\n",
     "#network,\n",
     "#bluetooth,\n",
